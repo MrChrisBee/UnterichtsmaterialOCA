@@ -5,7 +5,7 @@ public class FunctionUtil {
 	 * Wenn eine Klasse nur Statische Funktionen und statische Felder hat mach
 	 * es keinen Sinn Instanzen der Klasse zu erzeugen
 	 */
-
+ 
 	/*
 	 * in welchem klaren Sinn kann man sagen das die Methode Fläche unter Graph
 	 * mit Objekten zusammenarbeitet, von deren klasse diese Methode nichts
