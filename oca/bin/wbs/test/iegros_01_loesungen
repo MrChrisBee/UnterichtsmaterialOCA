@@ -1,0 +1,106 @@
+Lösungen zur Iegros_uebungen_1
+
+Aufgabe 1
+
+ich nehme an das die folgende Zeille einen Compilerfehler auslöst
+System.out.println(a1 instanceof B1);
+
+Referenztyp von a1 ist A1
+Referenztyp von B1 ist B1
+Die können nie zusammen kommen (kein Interface und keine abhängigkeiten voneinander)
+
+Richtig!!!
+
+
+Aufgabe 2
+
+Wegen des Interface als rhs operator geht eine ganze menge beim Compiler durch,
+b22 ist aber vom Referencetyp her final also kann ich trotz interface als vergleich b22 keine neu erzeugte Klasse zuweisen  
+
+System.out.println(b22 instanceof I2); wirft einen Compiler-Fehler 
+
+Aufgabe 3 
+i3.mb(); erzeugt einen Compiler-Fehler
+
+wenn ich das richtig verstanden habe sagt der Referenztyp ob der Aufruf einer Methode möglich ist
+Das ist hier I3 und dort gibt es keine Methode mb()
+
+Aufgabe 4
+
+
+class A4 {
+void m(CharSequence cs) {
+}
+}
+
+A4's m() erwartet etwas vom Typ CharSequence als parameter
+a4.m("blabla"); Stringliteral ok
+a4.m(new StringBuffer("abc")); ok
+a4.m(new StringBuilder("blabla")); ok
+a4.m(new StringBuilder(new StringBuffer(new String("lalla")))); ok
+}
+}
+
+das sollte klappen, keine Exceptions keine Ausgabe
+
+Aufgabe 5
+
+c5.m2(a5); sollte einen Compiler Fehler werfen
+
+die Methode erwartet ein Objekt der Klasse B5. a5 ist kein Kind von b5 sondern b5 erbt von a5
+es kann also dinge in b5 geben die a5 nicht zur Verfügung stellt
+
+
+Aufgabe 6
+
+in dem Part über C6
+class C6 {
+	void m(I6 i6) {
+		System.out.println(i6.m());
+	}
+} 
+kommt es spätestens beim Aufruf von i6.m() zum Compiler-Fehler
+m() ist hier nicht implementiert, was soll der Compiler da machen ?
+
+Allerdings .....
+
+Wird tatsächlich in der main eine Referenz einer Klasse mit einer gültigen Implementierung übergeben.
+Nach dem Prinzip der größten Gemeinheit wird es wohl klappen.
+
+Keine Exception Ausgabe: 
+a6
+b6
+
+
+Aufgabe 7
+
+System.out.println(a7); Ausgabe wbs.test.A7@1690726 -> eben die toString von Objekt
+System.out.println(b7); Ausgabe b7
+o = a7 = b7;  Referenztyp entscheidet ob eine Methode genutzt werden kann Objekttype welche Objekttype von allen B7
+System.out.println(o);   Ausgabe b7
+
+
+Aufgabe 8 
+
+Alles OK, Ausgabe
+
+A8Demo
+wbs.test.A8Demo@12345
+
+
+Aufgabe 9
+
+Compiler-Fehler bei System.out.println(o instanceof String);
+Das war FALSCH 
+der Referenztyp von o war Objekt 
+es könnte sein das in o eine Referenz auf ein Objekt vom Typ String steckt also kein Compiler-Fehler
+ABER 
+System.out.println(a9Demo instanceof String);
+in a9Demo kann nie eine Referenz auf ein Objekt vom Typ String sein
+
+
+Aufgabe 10
+
+spätestens hier gibt es einen Compiler-Fehler
+
+System.out.println(i101 instanceof String); 
